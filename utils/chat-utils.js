@@ -6,6 +6,8 @@ module.exports = {
             channel.send(str);
         return;
     },
+
+    
     reply: function (message, str) {
         message.channel.send(`${message.author} ${str}`);
     }

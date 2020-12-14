@@ -1,13 +1,9 @@
 {
 	"prefix": "!!",
 	"creatorID": "209344503599857664",
-	"embed_color": 3447003,
+	"embed_color": "#009fb5",
 	"debug": false,
 	"verbose": true,
-	"greet_new_members": true,
-	"greeting_channel": 481209340796338176,
-	"farewell_leaving_members": true,
-	"farewell_channel": 481209340796338176,
 	"allow_queue TODO": true,
 	"allow_moderation": true,
 	"allow_points TODO": true

@@ -59,23 +59,23 @@ function checkForPermission(commandFile, message) {
 	commandFile.config.perms.forEach((permission) => {
         //if user does not have permission do not let them run command
 		if(!message.member.hasPermission(permission)) {
-			chat_utils.reply(message, " you don't have permission to do  that.");
+			chat_utils.reply(message, 'you don\'t have permission to do  that.');
 			return false;
 		}
         //if bot does not have permission to do that, do not try it
 		if(!message.guild.me.hasPermission(permission)) {
-			chat_utils.reply(message, " I don't have permission to do that.");
+			chat_utils.reply(message, ' I don\'t have permission to do that.');
 			return false;
 		}
 	});
     //if command is not allowed for use in DMs and this is a DM, deny it
 	if(!message.guild && commandFile.config.guildOnly) {
-		chat_utils.reply(message, " that command can only be used in a Discord server.");
+		chat_utils.reply(message, ' that command can only be used in a Discord server.');
 		return false;
 	}
     //if command is disabled no one can use it
 	if(!commandFile.config.enabled) {
-		chat_utils.reply(message, " command is disabled.");
+		chat_utils.reply(message, ' command is disabled.');
 		    return false;
 	}
     //if the command is dev only then only a user with the creator ID can use it
