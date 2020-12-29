@@ -7,7 +7,12 @@ module.exports = {
         return;
     },
 
-    
+
+    send: function (message, str) {
+        message.channel.send(str);
+    },
+
+
     reply: function (message, str) {
         message.channel.send(`${message.author} ${str}`);
     }

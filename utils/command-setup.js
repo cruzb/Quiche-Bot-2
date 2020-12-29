@@ -10,8 +10,8 @@ exports.run = (commands, aliases) => {
 		let command = require('../' + file);
 		commands.set(command.help.name, './../' + file);
 
-		command.config.aliases.forEach((alias) => {
-			aliases.set(alias, './' + file);
+		command.config.aliases.forEach((alias) => { 
+			aliases.set(alias, './../' + file);
 		});
 	});
 }

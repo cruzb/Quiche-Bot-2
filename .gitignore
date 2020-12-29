@@ -5,3 +5,8 @@ npm-debug.log
 .env
 .DS_Store
 events/harass.js
+data/sugar
+data/nicole
+commands/Games/role.js
+sugar.js
+nicole.js

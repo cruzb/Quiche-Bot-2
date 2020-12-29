@@ -35,9 +35,10 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
     if (command_utils.checkCommandPermission(client, message)) {
-      command_utils.processCommand(client, message)
+      	return command_utils.processCommand(client, message)
     }
 
+	if(message.author.id == 683495882183933954) message.react('❤️');
 	cleverbot.run(message);
 });
 /*

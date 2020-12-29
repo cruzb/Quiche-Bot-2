@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
         .end((err, response) => {
             if(err) {
                 console.log('---Error in cat.js--');
-                message.channel.send('${message.author} sorry. Something went wrong :(')
+                message.channel.send(`${message.author} sorry. Something went wrong :(`)
                 return console.log(err);
             }
 

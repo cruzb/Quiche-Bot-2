@@ -28,8 +28,23 @@ module.exports = {
 
     processCommand: function (client, message) {
         // process input and split args for use
-        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+        const regExp = /[^\s"]+|"([^"]*)"/gi;
+        let content = message.content.slice(config.prefix.length).trim();
+        let args = [];
+        let match;
+        do {
+            //Each call to exec returns the next regex match as an array
+            match = regExp.exec(content);
+            if (match != null)
+            {
+                //Index 1 in the array is the captured group if it exists
+                //Index 0 is the matched text, which we use if no captured group exists
+                args.push(match[1] ? match[1].toLowerCase() : match[0].toLowerCase());
+            }
+        } while (match != null);
+        //const args = message.content.slice(config.prefix.length).trim().split(/\w+|"[^"]+"/g);
         const command = args.shift().toLowerCase();
+        console.log(args);
 
         // call seperate file with command code
         try{
